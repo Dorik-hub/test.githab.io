@@ -7,7 +7,7 @@
 	        box-sizing: border-box;
 font-family: 'Work Sans', sans-serif;
 }
-
+/*Стили общего блока формы*/
 .wrapper{
 
 	width:41.56rem;
@@ -24,6 +24,7 @@ font-family: 'Work Sans', sans-serif;
 	position:relative;
 
 }
+/*Стили левого синего блока*/
 .left-block{
 	width:20.63%;
 	display: -webkit-box;
@@ -54,6 +55,7 @@ font-family: 'Work Sans', sans-serif;
    top:19.75rem;
    left:1.1rem;
 }
+/*Стили правого блока. Самой формы.*/
 .right-block {
 	width:82.5%;
 	
@@ -74,6 +76,7 @@ font-style: normal;
 font-weight: 300;
 font-size: 0.87rem;
 }
+/*Стили форм заполнения*/
 .right-block label{
 	color:#7C7C7C;
 	margin-top: 1.2rem;
@@ -100,6 +103,7 @@ font-size: 0.87rem;
 .right-block div>input{
 	width:14.81rem;
 }
+/*Стили кнопок выбора*/
 #select-nationality{
 
 	width:93%;
@@ -132,6 +136,7 @@ font-size: 0.87rem;
 	    flex-wrap: wrap;
 	
 }
+/*Стили кнопки отправки формы*/
 .form-container div{width:49%;}
 div.button{
 	width:100%;
@@ -158,6 +163,7 @@ font-size: 0.875rem;
 	font-size: 0.81rem;
 	white-space: nowrap;
 }
+/*Дизайн кнопок выбора пола */
 input[type='radio'],
 label {
   cursor: pointer;
