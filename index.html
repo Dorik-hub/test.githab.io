@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans|Work+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="left-block">
+			<h1>Sign up</h1>
+		</div>
+		<div class="right-block">
+			<h2>New user?</h2>
+			<p>Use the form below to create your account.</p>
+			<div class="form-container">
+				<form action="#" method="post">
+					
+					<div>
+						<label for="firstname">First name</label>
+						<input type="text" name="firstname" id="firstname" value="" tabindex="1" />
+					</div>
+					<div>
+						<label for="lastname">Last name</label>
+						<input type="text" name="lastname" id="lastname" value="" tabindex="1" />
+					</div>
+					
+
+					<div>
+						<label for="select-nationality">Nationality</label>
+						<select name="select-nationality" id="select-nationality">
+							<option value="Choice 1">American</option>
+							<option value="Choice 2">Russian</option>
+							<option value="Choice 3">Belarus</option>
+						</select>
+					</div>
+					<div>
+						<label for="email">E-mail</label>
+						<input type="email" name="email" id="email" value="" tabindex="1" />
+					</div>
+					
+					<div>
+						<label for="select-choice">Date of birth</label>
+						<select name="select-choice" id = "days">
+							
+						</select>
+						<select name="select-choice" id = "months">
+
+							
+						</select>
+						<select name="select-choice"  id = "years">
+							
+						</select>
+					</div>
+				
+					<div>
+						<label for="gender">Gender</label>
+				<span><input name="gender" type="radio" value="male"> Male</span>
+                <span><input name="gender" type="radio" value="female"> Female</span>
+					</div>
+					<div>
+						<label for="password">Password</label>
+						<input type="password" name="password" id="password" value="" tabindex="1" />
+					</div>
+					<div>
+						<label for="confirm-password">Confirm password</label>
+						<input type="password" name="confirm-password" id="confirm-password" value="" tabindex="1" />
+					</div>
+				
+				
+					<div class="button">
+						<p>Have an account?<a href="#">Login</a></p>
+						<button>Complete Sighup</button>
+					</div>
+				</form>
+				
+			</div>
+		</div>
+
+	</div>
+	
+	<script type = "text/javascript">
+        /*
+            Функция injectSelect принимает объект select и ассоциативный массив.
+            Select очищается, затем в него добавляются элементы option,
+            значение которых устанавливают ключи массива, а текст — значения массива.
+            Ничего не возвращает.
+        */
+        function injectSelect (sel, rowsObject) {
+            var opt, x;
+            sel.innerHTML = "";
+            for (x in rowsObject) {
+                opt = document.createElement("option");
+                opt.value = x;
+                opt.innerHTML = rowsObject[x];
+                sel.appendChild(opt);
+            }
+        }
+        /*
+            Функция makeNumbersObject принимает два числа. Возвращает ассоциативный массив
+            ряда чисел от меньшего к большему, включительно. 
+        */
+        function makeNumbersObject (from, to) {
+            var result = {}, x;
+            if(from > to) { // Если from меньше to, поменять их значения друг на друга.
+                var z = from;
+                from = to;
+                to = z;
+            }
+            for (x = from; x <= to; x++) {
+                result[x] = x;
+            }
+            return result
+        }
+        injectSelect(document.getElementById("months"), {
+            jan:"January", feb:"February", mar:"March", apr:"April", 
+            may:"May", jun:"June", jul:"July", avg:"August", 
+            sep:"September", okt:"October", nov:"November", dec:"December"
+        }); // Наполняем месяца
+        injectSelect(document.getElementById("years"), makeNumbersObject(1921, 2020)); // Наполняем года
+        injectSelect(document.getElementById("days"), makeNumbersObject(1, 99));// Наполняем дни
+
+
+        // Disable autoload
+window.cssFinalize=false; 
+// DOM is ready
+jQuery(function($) { 
+	// Start parse
+	$('style, link').cssFinalize();
+});
+    </script>
+    
+</body>
+</html>
